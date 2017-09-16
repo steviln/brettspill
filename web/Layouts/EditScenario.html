@@ -1,0 +1,19 @@
+<div id="contentBox">
+<h1>Rediger/Legg til Scenario</h1>
+<div id="loginZone">
+<form>    <fieldset>
+        <input id="spillID" name="spillID" type="hidden" ng-model="scenario.spillID" value="{{ scenario.spillID }}" />
+        <input id="fraksjonID" name="fraksjonID" ng-model="scenario.id" type="hidden" value="{{ scenario.id }}" />
+        <div class="formLine">
+            <div class="formLabel">
+                <label for="Navn">navn</label> 
+            </div>
+            <div class="formField">
+                <input id="navn" name="navn" type="text" ng-model="scenario.navn" value="{{ scenario.navn }}" /> 
+            </div>
+        </div>
+
+    <button ng-click="rediger()" class="hovedSubmitKnapp" name="endreknapp">Lagre scenario</button>
+    </fieldset> 
+</form></div>
+</div>

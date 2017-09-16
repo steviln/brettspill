@@ -1,0 +1,50 @@
+<div id="contentBox">
+<h1>Spilling</h1>
+ <div class="gamelistcolumn">
+        Spill
+ </div>
+<div class="gamelistcolumn">
+          {{ modellen.spillnavn }}
+</div>
+ <div class="gamelistcolumn">
+        dato
+ </div>
+<div class="gamelistcolumn">
+          {{ modellen.dato }}
+</div>
+
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+    <th>
+        Plassering
+    </th>
+    <th>
+        Spiller
+    </th>
+    <th>
+        Fraksjon
+    </th>
+    <th>
+        Poeng
+    </th>
+</tr>
+
+<tr ng-repeat="deltak in modellen.deltakelser">
+    <td>
+            {{ deltak.posisjon }}
+    </td>
+    <td>
+            {{ deltak.spiller }}
+    </td>
+    <td>
+            {{ deltak.fraksjon }}
+    </td>
+    <td>
+            {{ deltak.poeng }}
+    </td>
+
+</tr>
+
+</table>
+</div>
+

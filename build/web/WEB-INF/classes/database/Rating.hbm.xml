@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-May-2016 11:52:48 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+   <class catalog="boardgamegroup" name="database.classes.Rating" optimistic-lock="version" table="RATING">
+      <meta attribute="class-description">
+         This class contains the users of the application. 
+      </meta>
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="rating" column="rating" type="int"/>
+      <property name="owner" column="owner" type="int"/>
+      <many-to-one name="game" class="database.classes.Game" fetch="select">
+            <column name="game" not-null="true" />
+      </many-to-one> 
+      <many-to-one name="spiller" class="database.classes.Player" fetch="select">
+            <column name="playerID" not-null="true" />
+      </many-to-one>      
+   </class>
+</hibernate-mapping>

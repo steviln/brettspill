@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-May-2016 11:52:48 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="boardgamegroup" name="database.classes.FacebookFailLogin" optimistic-lock="version" table="facebookfaillogin">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="navn" type="string">
+      <column name="navn"/>
+    </property>
+    <property name="facebookid" type="string">
+      <column name="facebookID"/>
+    </property>
+
+  </class>
+</hibernate-mapping>

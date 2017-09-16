@@ -1,0 +1,19 @@
+<div id="contentBox">
+<h1>Rediger/Legg til Fraksjon</h1>
+<div id="loginZone">
+<form>    <fieldset>
+        <input id="spillID" name="spillID" type="hidden" ng-model="fraksjonen.spillID" value="{{ fraksjonen.spillID }}" />
+        <input id="fraksjonID" name="fraksjonID" ng-model="fraksjonen.id" type="hidden" value="{{ fraksjonen.id }}" />
+        <div class="formLine">
+            <div class="formLabel">
+                <label for="Navn">navn</label> 
+            </div>
+            <div class="formField">
+                <input id="navn" name="navn" type="text" ng-model="fraksjonen.navn" value="{{ fraksjonen.navn }}" /> 
+            </div>
+        </div>
+
+    <button ng-click="rediger()" class="hovedSubmitKnapp" name="endreknapp">Lagre fraksjon</button>
+    </fieldset> 
+</form></div>
+</div>

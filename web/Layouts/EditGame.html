@@ -1,0 +1,92 @@
+<div id="contentBox">
+    <h1>Boardgames</h1>
+
+    <form><fieldset class="normalFieldset">      
+                <input name="spillet.spillID" ng-model="spillet.id" type="hidden" value="{{ spillet.id }}" />
+                <div class="formLabel">
+                    <label for="Navn">Navn</label>
+                </div>
+                <div class="formField">
+                    <input id="spillet_navn" ng-model="spillet.navn" type="text" value="{{ spillet.navn }}" />
+                </div>
+                <div class="formLabel">
+                    <label for="Boardgamegeek_ID">Boardgamegeek ID</label>
+                </div>
+                <div class="formField">
+                    <input id="spillet_boardgamegeekID" ng-model="spillet.boardgamegeekID" type="text" value="{{ spillet.boardgamegeekID }}" />
+                </div>
+                <div class="formLabel">
+                    <label for="Antall_spillere">Antall spillere</label>
+                </div>
+                <div class="formFieldShort">
+                    <input data-val="true" data-val-number="The field spillerantall must be a number." data-val-required="The spillerantall field is required." id="spillet_spillerantall" ng-model="spillet.spillerantall" type="text" value="{{ spillet.spillerantall }}" />
+                </div>
+                <div class="formLabel">
+                    <label for="Utgiver">Utgiver</label>
+                </div>
+                <div class="formField">
+                    <select ng-options="opsjon.id as opsjon.navn for opsjon in spillet.opsjoner" id="spillet_selskapID" ng-model="spillet.selskapID">                         
+                    </select>
+                    <input type="button" class="forgotPlayerButton" onclick="javascript: visUpdater();" value="Legg til selskap" />
+                </div>
+                    <button ng-click="rediger()" class="hovedSubmitKnapp" name="endreknapp">Endre spillet</button>
+            </fieldset> 
+            <div id="internLenker">
+                <a href="#redigerSesjon/0/{{ spillet.id }}">Logg spill</a> 
+                <a ng-click="velgSpillere()">Logg spill med valgte spillere</a>
+                <a href="#redigerFraksjon/0/{{ spillet.id }}">Lag ny fraksjon</a>  
+                <a href="#redigerScenario/0/{{ spillet.id }}">Lag nytt scenario</a>  
+            </div>
+            </form> 
+    
+            <div id="playerChooser">
+                <div class="selectTopRowPlay">
+                    <input style="clear:none; margin-left:20px;" type="button" ng-click="loggSpillPreset()" class="hovedSubmitKnapp"  value="Logg spill" />
+                    <input style="clear:none; margin-left:20px;" type="button" ng-click="kanseller()" class="hovedSubmitKnapp"  value="Kanseller" />
+                </div>
+                <div ng-repeat="arraypunkt in spillet.selspillarray" class="seleclistholder">
+                    <div ng-repeat="sspiller in arraypunkt" ng-click="selecSpiller(sspiller)" class="seleclist {{ sspiller.divclass }}">
+                        {{ sspiller.fornavn }} {{ sspiller.etternavn }}
+                    </div>
+                </div>
+
+                
+            </div>
+    
+            <h2>Fraksjoner</h2>
+            <div ng-repeat="fraksjon in spillet.fraksjoner">
+                <div class="gamelistcolumnholder">
+                    <div class="gamelistcolumn">
+                        {{ fraksjon.navn }}
+                    </div>
+                    <div class="gamelistcolumn">
+                        <a class="redigervis" href="#redigerFraksjon/{{ fraksjon.id }}/{{ spillet.id }}"> Rediger fraksjon</a>
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+            <h2>Scenarier</h2>
+            <div ng-repeat="scenario in spillet.scenarier">
+                <div class="gamelistcolumnholder">
+                    <div class="gamelistcolumn">
+                        {{ scenario.navn }}
+                    </div>
+                    <div class="gamelistcolumn">
+                        <a class="redigervis" href="#redigerScenario/{{ scenario.id }}/{{ spillet.id }}"> Rediger scenario</a>
+                    </div>
+                </div>
+            </div>       
+            <br /><br />
+
+  
+
+    <div id="spillUpdaterDiv" class="updaterDIV">
+        <div class="formLabel" id="firstpretext">Navn:</div>
+        <input id="thirdVariable" type="text" value="" />
+        <br />
+        <input id="redigerid" type="hidden" value="" />
+        <input type="button" ng-click="sendSpiller()" class="hovedSubmitKnapp" id="newPublisherButton" value="Legg til utgiver" />
+        <input type="button" ng-click="kanseller()" class="hovedSubmitKnapp" id="cancelNewPublisherButton" value="Kanseller" />
+    </div>
+
+</div>

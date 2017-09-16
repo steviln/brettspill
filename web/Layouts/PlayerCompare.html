@@ -1,0 +1,18 @@
+<div id="contentBox">
+<h1>Sammenligning mellom {{ modellen.forstenavn}} og {{ modellen.andrenavn}} </h1>
+<p>{{ modellen.sumstreng }}</p>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th></th>
+        <th style="text-align:center;">{{ modellen.forstenavn[0] }} <br />uten <br />{{ modellen.andrenavn[0] }}</th>
+        <th style="text-align:center;">{{ modellen.forstenavn[0] }} <br />mot <br />{{ modellen.andrenavn[0] }}</th>
+        <th style="text-align:center;">{{ modellen.andrenavn[0] }} <br />mot <br />{{ modellen.forstenavn[0] }}</th>
+        <th style="text-align:center;">{{ modellen.andrenavn[0] }} <br />uten <br />{{ modellen.forstenavn[0] }}</th>
+    </tr>
+    <tr ng-repeat="spill in modellen.spillene">
+        <td>{{ spill.spillnavn }}</td>
+        <td ng-repeat="tall in spill.tallene">{{ tall.sum }}</td>
+        
+    </tr>
+</table>
+</div>

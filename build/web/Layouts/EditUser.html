@@ -1,0 +1,73 @@
+<div id="contentBox">
+<h1>Profil for {{ modellen.fornavn }} {{ modellen.etternavn }}</h1>
+<div id="errorMessageRed"> </div>
+<form>
+        <input name="id" type="hidden" ng-model="modellen.id" type="hidden" value="{{ modellen.id }}" />   
+        <div class="formLabel">
+            <label for="Fornavn">Fornavn</label> 
+        </div>
+        <div class="formField">
+            <input name="fornavn" type="text" ng-model="modellen.fornavn" value="{{ modellen.fornavn }}" /> 
+        </div>
+        <div class="formLabel">
+            <label for="Etternavn">Etternavn</label>
+        </div>
+        <div class="formField">
+            <input name="etternavn" type="text" ng-model="modellen.etternavn" value="{{ modellen.etternavn }}"  />
+        </div>
+        <div class="formLabel">
+            <label for="Epost">Epost</label>
+        </div>
+        <div class="formField">
+            <input name="epost" type="text" ng-model="modellen.epost" value="{{ modellen.epost }}"  />
+        </div>             
+        <div class="formLabel">
+            <label for="Brukernavn">Brukernavn</label>            
+        </div>
+        <div class="formField">
+                <input name="brukernavn" type="text" ng-model="modellen.brukernavn" value="{{ modellen.brukernavn }}"  />             
+        </div>
+        <div class="formLabel">
+                <label for="Passord">Passord</label>             
+        </div>
+        <div class="formField">
+                <input name="passord" type="password" ng-model="modellen.passord" value="{{ modellen.passord }}" />              
+        </div>
+        <div class="formLabel">
+                <label for="Gjenta_passord">Gjenta passord</label>             
+        </div>
+        <div class="formField">
+                <input name="passordkopi" type="password" ng-model="modellen.passordto" value="{{ modellen.passordto }}"  />             
+        </div>
+        <div class="formLabel">
+                <label for="Status">Status</label>
+        </div> 
+        <div class="formField">
+                <select name="spillereLogin.status" ng-options="opsjon.id as opsjon.navn for opsjon in modellen.statusliste" ng-model="modellen.status" id="select{{ modellen.status }}">
+                </select>
+        </div> 
+        <div class="formLabel">
+                <label for="Status">Anonym bruker</label>
+        </div> 
+        <div class="formField">
+            <input type="checkbox" ng-checked="modellen.ignore" ng-click="sjekked()" />
+        </div>         
+        
+        <div style="width:100%; float:left;">         
+                        <button ng-click="rediger()" class="hovedSubmitKnapp" name="endreknapp">Endre</button>
+        </div> 
+        
+        <div ng-repeat="ranke in modellen.gamerank">
+            <div class="roundrankfield">
+                <div class="prenavnranke">{{ ranke.spillnavn }} </div> <div class="prenselect">
+                    <select ng-change="spillchange(ranke)" ng-options="opsjon.tekst as opsjon.id for opsjon in modellen.ratingvalg" id="spillet_selskapID" ng-model="ranke.ranken"></div>                         
+                    </select>
+                    Eier spillet: <input type="checkbox" ng-checked="ranke.eier" ng-click="sjekkedUser(ranke)" />
+       
+            </div>
+        </div>
+
+   
+</form>
+</div>
+

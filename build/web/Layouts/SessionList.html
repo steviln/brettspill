@@ -1,0 +1,16 @@
+    <div id="contentBox">
+        <h1>Spillinger</h1>
+        <div ng-repeat="sesjon in modellen.spillinger">
+            <div class="gamelistcolumnholder">
+                <div class="gamenamelistcolumn gamelistercolumn">
+                    {{ sesjon.navn }}
+                </div>
+                <div class="gamelinklistcolumn gamelistercolumn">
+                    <a href="#sesjoninfo/{{ sesjon.id }}">Vis </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="redigervis" href="{{ sesjon.redlink }}"> {{ sesjon.redtekst }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

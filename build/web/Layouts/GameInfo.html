@@ -1,0 +1,59 @@
+   <div id="contentBox">
+
+        <h1>{{ modellen.navn }}</h1>
+        Antall spillere: {{ modellen.antallspillere }}
+
+        <h3>Fraksjoner:</h3>
+            <div ng-repeat="fraksjon in modellen.fraksjoner">
+                <div class="gamefraksjondata">
+                    {{ fraksjon.navn }}
+                </div>
+            </div>
+        <h3>Spillinger</h3>
+            <div ng-repeat="spilling in modellen.spillinger">
+                <div class="gamelistrow">
+                    {{ spilling.dato }}
+                    <a href="#sesjoninfo/{{ spilling.id }}">Vis spilling </a>
+                </div>
+            </div>
+        <h3>Beste spillere</h3>
+        <div class="listpageBoxHalf">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr><td>Spiller</td><td>Rating</td><td class="nomobilecolumn">Snittscore</td><td class="nomobilecolumn">Winrate</td><td>Antall</td><td></td></tr>                            
+                <tr ng-repeat="spiller in modellen.spillere">
+                    <td> {{ spiller.navn }} </td><td> {{ spiller.rating}} </td><td class="nomobilecolumn"> {{ spiller.snittscore }} </td><td class="nomobilecolumn"> {{ spiller.winrate }} </td><td> {{ spiller.antall }} </td><td> <a href="#spillerinfo/{{ spiller.id }}">Vis</a></td>
+                </tr>                        
+            </table>
+            
+            <h3>Beste fraksjoner</h3>
+            <div>
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr><td>Fraksjon</td><td>Rating</td><td>Snittscore</td><td></td></tr>                           
+                        <tr ng-repeat="frak in modellen.fraks">
+                            <td> {{ frak.navn }} </td><td> {{ frak.rating }} </td><td> {{ frak.snittscore }} </td><td></td>
+                        </tr>                           
+                </table>
+
+            </div>
+            <div id="matriselink"><br /><a href="#spillmatrise/{{ modellen.id }}">Detaljert oversikt >></a><br /></div>
+            <div style="float:left;">
+                <div id="spillRangeringDiv">
+                    <h3>Ranger spillet</h3>
+
+                    <select ng-change="endretrangering(modellen.ranken)" ng-options="opsjon.tekst as opsjon.id for opsjon in modellen.ratingvalg" id="spillet_selskapID" ng-model="modellen.ranken">                         
+                    </select>
+                </div>
+            <h3>Spillere sine rangeringer</h3>
+    
+            <div ng-repeat="ranku in modellen.rankeringer">
+                <h3>{{ ranku.rangnavn }}</h3>
+                <div ng-repeat="mindel in ranku.spillerne">
+                    {{ mindel.spillernavn }} <a href="#spillerinfo/{{ mindel.id }}">Vis</a> <br />
+                </div>
+            </div>  
+            <h3>Følgende eier dette spillet</h3>
+            <div ng-repeat="ran in modellen.eiere">               
+                    {{ ran.navn }} <a href="#spillerinfo/{{ ran.id }}">Vis</a> <br />
+            </div>             
+            </div>
+        </div>

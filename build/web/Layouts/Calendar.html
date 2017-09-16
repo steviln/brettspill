@@ -1,0 +1,34 @@
+<div id="contentBox">
+    <h1>Kalender</h1>
+    <div id="ukedagsfelt">
+        <div ng-repeat="dag in modellen.ukedager" class="weekdayblock">             
+            <div class="{{ dag.dagclass }} ukedag" ng-click="settSynlig(dag)">
+                <div class="dayweekede">{{ dag.navn }}</div>
+                <div class="{{ dag.inclass }}">
+                    <div class="dayweeked" ng-click="endreKalenderDag(dag,0)">Aldri</div>
+                    <div class="dayweeked" ng-click="endreKalenderDag(dag,1)">Sjelden</div>
+                    <div class="dayweeked" ng-click="endreKalenderDag(dag,2)">Nøytral</div>
+                    <div class="dayweeked" ng-click="endreKalenderDag(dag,3)">Ofte</div>
+                    <div class="dayweeked" ng-click="endreKalenderDag(dag,4)">Fast</div>
+                    <div class="dayweeked" ng-click="lukkDayen(dag, $event)">Lukk</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="selectKalenderZone">
+        <div ng-repeat="kat in modellen.statuser" class="classcalenderbolk {{ kat.omklasse }}">
+            <div class="{{ kat.innklasse }} innzonekalender" ng-click="valgTypeKalender(kat)">{{ kat.navn }}</div>
+        </div>
+    </div>
+    <div id="ukefelt" ng-mouseleave="kalenderMusUt()">
+        <div ng-repeat="maaned in modellen.ukelandender" class="maanedrad">
+            <h1>{{ maaned.navn }}</h1> 
+            <div ng-repeat="dagsnavn in modellen.dagnavn" class="dagcelle">{{ dagsnavn }}</div>
+            <div ng-repeat="uke in maaned.uker" class="ukerad">
+                <div ng-mousedown="kalenderMusNed(dager)" ng-mouseup="kalenderMusOpp(dager)" ng-repeat="dager in uke" class="{{ dager.klasse }} dagcelle">
+                    {{ dager.dato }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+    <div id="contentBox">
+        <a class="redigervis" href="{{ modellen.redlink }}"> {{ modellen.redtekst }}</a>
+        <h1>Spill Liste</h1>
+        <div ng-repeat="spill in modellen.listespill">
+            <div class="gamelistcolumnholder">
+                <div class="gamenamelistcolumn gamelistercolumn">
+                    {{ spill.navn }}
+                </div>
+                <div class="gamelinklistcolumn gamelistercolumn">
+                    <a href="#Spillinfo/{{ spill.id }}">Vis </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="redigervis" href="{{ spill.redlink }}"> {{ spill.redtekst }}</a>
+                </div>
+            </div>
+        </div>
+    </div>

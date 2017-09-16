@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Brettspill rangeringer og informasjon</title>
+        <link href="/Boardgame/Content/Site.css" rel="stylesheet"/>
+        <link href="/Boardgame/Content/mobile.css" rel="stylesheet" />
+        <link href="/Boardgame/Content/desktop.css" rel="stylesheet" />
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <script src="/Boardgame/angular/angular.js"></script>
+        <script src="/Boardgame/angular/app.js"></script>
+        <script src="/Boardgame/angular/controller.js"></script>
+        <script src="/Boardgame/angular/facebook.js"></script>
+        <script src="/Boardgame/Scripts/jquery-1.7.1.js"></script>
+        <script src="/Boardgame/Scripts/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+        <script src="/Boardgame/Scripts/Custom/ParticipantSorter.js"></script>
+        <meta name="viewport" content="width=device-width" />
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<div id="errorMessageRed"></div>
+<div id="menuButton" onclick="javascript: goToTop();">MENU</div>
+<div ng-app="mainApp" ng-controller="mainControl">               
+        <div id="topMenu">
+            <div id="menBount">
+                <div id="logoField" onclick="window.location = '/Boardgame/';"><span id="forsteOrd">Brettspill</span> Statistikk</div>
+
+                <ul>
+                    <li ng-repeat="menypunkt in menypunkter">                       
+                        <a href="#{{ menypunkt.menypunkt }}" data-id="{{ menypunkt.sideID }}">{{ menypunkt.sideTekst }}</a>
+                    </li>                   
+                </ul>
+                <div id="loggitConfirm"></div>
+            </div>
+    </div>
+    <div id="mainContent" ng-view="">
+
+   </div>
+</div>
+    
+
+
+
+
+</body>
+</html>

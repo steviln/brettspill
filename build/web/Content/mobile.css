@@ -1,0 +1,223 @@
+﻿@media (min-width: 0px) and (max-width: 450px) {
+
+
+    #menBount
+    {
+        width:100%;
+        position:relative;
+        padding-bottom:32px;
+    }
+    #menuButton{
+        position:fixed;
+        top:20px;
+        left:100%;
+        margin-left:-90px;
+        width:60px;
+        font-weight:bold;
+        font-size:16px;
+        line-height:26px;
+        color:#6f6ca6;
+        background-color:#FFFFFF;
+        border:1px solid #6f6ca6;
+        text-align:center;
+        cursor:pointer;
+        z-index:10;
+    }
+    #mainContent{
+        min-height:1000px;
+    }
+    #mainContent h1{
+        line-height:36px;
+    }  
+    #contentBox{
+        padding-left:5px;
+        padding-right:5px;
+    }
+    #menBount li
+    {
+        padding-top:12px;
+        padding-bottom: 12px;
+    }
+    #logoField 
+    {
+        width:100%;
+        text-align:center;
+        margin-bottom:12px;
+    }
+    #topMenu {
+        text-align:center;
+    }
+    #topMenu a {
+        line-height:40px;
+        width:100%;
+        text-align:center;
+        font-size:30px; 
+        font-family:Verdana; 
+        color:#6f6ca6; 
+        text-decoration:none;
+    }
+    #mainContent
+    {
+        width:100%;
+    }
+    .frontpageBoxHalf
+    {
+        float:left;
+        width:100%; 
+        padding-bottom:25px;   
+    }
+    .mobileRound{
+        padding:8px 8px 8px 8px;
+    }
+    .mobileRound tr:first-child td {
+
+    }
+    td
+    {
+        text-align:left;
+        padding-right:25px;
+        font-family:Arial;
+        line-height:16px;
+        font-size:12px;    
+    }
+    th
+    {
+        text-align:left;
+        padding-right:25px;
+        font-family:Arial;
+        line-height:20px;
+        font-size:14px;  
+        font-weight:bold;  
+    }
+    .frontpageBoxHalf{
+        padding-left:10px;
+    }
+    .nomobilecolumn{
+        display:none;
+    }
+    #mainContent h1 {
+        width:100%;
+        text-align:center;
+    }
+    #mainContent h2 {
+        width:100%;
+        text-align:center;
+    }
+    #menuLink {
+       line-height:40px;
+       text-align:right;
+       padding-right:40px;
+    }
+    #menuLink a {
+        font-size:20px; 
+        font-family:Verdana; 
+        color:#6f6ca6; 
+        font-weight:bold;
+        cursor:pointer; 
+    }
+    #sideMenu
+    {
+        float:left;
+        width:100%; 
+        padding-top:30px;
+        line-height:26px;
+        text-align:center;
+    }
+    #contentField
+    {
+        float:left;
+        width:90%;
+        padding-left:5%;
+        padding-right:5%;
+        padding-bottom:50px;
+    }
+    .normalFieldset
+    {    
+        width:90%;   
+    }
+    .shortfield{
+        width:50% !important;
+    }
+    .formLabel
+    {
+        width:100%;
+        float:left;
+        line-height:33px;
+        font-family:Arial;
+        color:#6f6ca6;
+        font-size:18px;
+        text-align:center;
+    }
+    .formField
+    {
+        width:100%;
+        float:left; 
+    }
+    .formField input
+    {
+        line-height:24px;
+        height:24px;
+        font-size:18px;
+        border:1px solid #6f6ca6;
+        margin-top:4px;
+        width:100%;
+    }
+    .formField select
+    {
+        line-height:24px;
+        height:24px;
+        font-size:18px;
+        border:1px solid #6f6ca6;
+        margin-top:4px;        
+    }  
+    .dragField{
+        display:none;
+    }
+    .formField textarea
+    {
+        line-height:24px;
+        height:160px;
+        font-size:18px;
+        border:1px solid #6f6ca6;
+        margin-top:4px;
+        width:100%;
+    }
+    .formFieldShort
+    {
+        
+        float:left;
+        height:33px;    
+    }
+    .formFieldShort input
+    {
+        line-height:24px;
+        height:24px;
+        font-size:18px;
+        border:1px solid #6f6ca6;
+        margin-top:4px;
+        width:50px;
+        text-align:center;   
+    }
+    .forgotPlayerButton 
+    {
+     width:135px !important;
+     height: 27px !important;
+    }
+    .nomobile{
+        display:none;
+    }
+    .focusglass{        
+        width:388px;
+        overflow:auto;
+    }
+    .gamelinklistcolumn{
+        width:30%;
+    }
+    .gamenamelistcolumn{
+        width:70%;
+    }
+    .mobselect{
+        width:100%;
+    }
+
+}

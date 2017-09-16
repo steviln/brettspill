@@ -1,0 +1,84 @@
+<div id="contentBox">
+
+        <h1>registrer Spilling</h1>
+            <input class="hovedSubmitKnapp" style="clear:none; margin-right:18px;" type="button" id="sortButton" ng-click="sorter()" value="Sorter etter poengsum" />
+            <input class="hovedSubmitKnapp" style="clear:none; margin-right:18px;" type="button" id="sortPosButton" ng-click="sorterPosisjon()" value="Sorter etter posisjon" />
+<br /><br /><br />            
+<form>
+    <input ng-model="sesjonen.id" type="hidden" value="{{ sesjonen.id }}" />
+    <input ng-model="sesjonen.spillID" type="hidden" value="{{ sesjonen.spillID }}" />
+                    <div class="formLabel">
+                            <label for="Dato">Dato</label>
+                    </div>
+                    <div class="formField">
+                            <input ng-model="sesjonen.dato" type="text" value="{{ sesjonen.dato }}" />
+                    </div>
+                    <div class="formLabel">
+                            <label for="Dato">Scenario</label>
+                    </div>
+                    <div class="formField">
+                        <select class="mobselect" ng-options="opsjon.id as opsjon.navn for opsjon in sesjonen.scenarioer" ng-model="sesjonen.scenarioID">
+                        </select>
+                    </div>
+                    <div id="deltakelseZoneHome" ng-repeat="deltakelse in sesjonen.deltakelser">
+                        <div class="deltakelseZone" id="zone{{deltakelse.redigerid}}">
+                            <div class="dragField" ng-mousedown="dragClick($event)" id="comp{{deltakelse.redigerid}}">X</div>
+                            <input type="hidden" class="redigerig" value="{{deltakelse.redigerid}}" />
+                            <div class="deltakerDrag"></div>
+                            <input ng-model="deltakelse.id" type="hidden" value="{{ deltakelse.id }}" />
+              
+
+                            <div class="formLabel dragMe shortfield">
+                                <label for="Plassering">Plassering</label>
+                            </div>
+                            <div class="formFieldShort posisjon">
+                                <input onclick="javascript:labelsjekk(this);" ng-model="deltakelse.posisjon" type="text" value="{{ deltakelse.posisjon }}" />
+                            </div>
+                            <div class="formLabel dragMe shortfield">
+                                <label for="Poengsum">Poengsum</label>
+                            </div>
+                            <div class="formFieldShort poengsum"> 
+                                <input onclick="javascript:labelsjekk(this);" ng-model="deltakelse.poeng" type="text" value="{{ deltakelse.poeng | number }}" />
+                            </div>
+                            <div class="formLabel dragMe">
+                                <label for="Spiller">Spiller</label>
+                            </div>
+                            <div class="formField spillerfeltet">
+                                <select class="mobselect" ng-options="opsjon.id as opsjon.navn for opsjon in sesjonen.spillere" ng-model="deltakelse.spillerID" id="select{{deltakelse.redigerid}}" name="sesjonen.Spillere[0].deltakerID">
+
+                                </select>
+                                <input type="button" class="forgotPlayerButton" id="{{deltakelse.redigerid}}" ng-click="visUpdaterSpilleren(deltakelse.redigerid)" value="Legg til spiller" />
+                            </div>
+
+                            <div class="formLabel dragMe">
+                                    <label for="Fraksjon">Fraksjon</label>
+                            </div>
+                            <div class="formField">
+                                <select class="mobselect" ng-options="opsjon.id as opsjon.navn for opsjon in sesjonen.fraksjoner" ng-model="deltakelse.fraksjonID" id="sesjonen_Spillere_0__fraksjonID" name="sesjonen.Spillere[0].fraksjonID">
+
+                                </select>
+                            </div>
+                    </div>                        
+  
+                </div>
+                <div id="submitknappsesjon" style="width:100%; float:left;">         
+                        <button ng-click="rediger()" class="hovedSubmitKnapp" name="endreknapp">Endre sesjon</button>
+                </div>  
+</form>
+
+    
+
+</div>
+
+<div id="personUpdaterDiv" class="updaterDIV">
+    <div class="formLabel" id="firstpretext">Foravn:</div>
+    <input id="firstVariable" type="text" value="" />
+    <div class="formLabel" id="secondpretext">Etternavn:</div>
+    <input id="secondVariable" type="text" value="" />
+    <br />
+    <input id="redigerid" type="hidden" value="" />
+    <button type="button" ng-click="sendEnNySpiller()" class="hovedSubmitKnapp" id="newPlayerButton">Legg til spiller</button>
+    <button type="button" ng-click="kanselleren()" class="hovedSubmitKnapp" id="cancelNewPlayerButton">Kanseller</button> 
+</div>
+
+

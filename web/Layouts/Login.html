@@ -1,0 +1,21 @@
+<div id="contentBox">
+<h1>Login</h1>
+    <div id="loginZone">
+           <div id="errorMessageRed">  <div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>  </div>
+           <form>
+                <div class="formLine">
+                    <div class="formLabel">Brukernavn: </div>
+                        <div class="formField"><input ng-model="user.username" type="text" value="" name="brukernavn" /></div>
+                </div>
+                <div class="formLine">
+                    <div class="formLabel">Passord: </div>
+                        <div class="formField"><input ng-model="user.password" type="password" value="" name="passord" /></div>
+                </div>
+               <button ng-click="submit()" class="hovedSubmitKnapp" name="loginknapp">Logg inn</button><br />
+            </form>
+        <br /><a id="facebookLoginButton" href="https://www.facebook.com/v2.8/dialog/oauth?client_id=941343709256136&redirect_uri=http://www.drammenbrettspill.com/Boardgame/Facebook/ReditToFacebook" class="hovedSubmitKnapp">Logg inn med Facebook</a><br />
+    </div>
+    <div class="fb-login-button" data-show-faces="true" data-width="400" data-max-rows="1"></div>
+    <div id="errorLogin" style="display:none; color:#FF0000;">Du oppga feil brukernavn og/eller passord</div>
+</div>

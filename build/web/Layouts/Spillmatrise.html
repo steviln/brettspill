@@ -1,0 +1,29 @@
+<div id="contentBox">
+    <div class="mobileRound" id="mobileRounder">
+        <h1>Detaljerte data for {{ modellen.navn }}</h1>
+        <h3>Resultat</h3>
+        <div class="focusglass">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr ng-repeat="rad in modellen.matrise">
+                <td ng-repeat="ra in rad.row">{{ ra.column }}</td>
+                </tr>        
+            </table>    
+        </div>
+        <h3>Antall spillinger</h3>
+        <div class="focusglass">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr ng-repeat="rad in modellen.antallmatrise">
+                <td ng-repeat="ra in rad.row">{{ ra.column }}</td>
+                </tr>        
+            </table>    
+        </div>
+        <h3>Poeng</h3>
+        <div class="focusglass">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr ng-repeat="rad in modellen.poengmatrise">
+                <td ng-repeat="ra in rad.row">{{ ra.column }}</td>
+                </tr>        
+            </table>    
+        </div>
+    </div>
+</div>

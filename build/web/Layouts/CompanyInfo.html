@@ -1,0 +1,19 @@
+<div id="contentBox">
+<h1>{{ modellen.navn }}</h1>
+        <h2>Spill Liste</h2>
+        <table border="0" cellspacing="0" cellpadding="0">
+        <tr ng-repeat="spillet in modellen.spill">
+                <td>
+                    {{ spillet.navn }}
+                </td>
+                <td>
+                   {{ spillet.antallsesjoner }}
+                </td>
+                <td>
+                    <a href="#Spillinfo/{{ spillet.id }}">Vis </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="redigervis" href="{{ spillet.redlink }}"> {{ spillet.redtekst }}</a>
+                </td>
+        </tr>
+        </table>
+</div>

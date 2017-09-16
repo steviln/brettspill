@@ -1,0 +1,63 @@
+<div id="contentBox">
+<h1>{{ modellen.navn }}</h1>
+    <a href="#kalender/{{ modellen.id }}">Se kalender </a>
+    <div id="playerRatingArea">
+        <div id="playerRatingField">
+            {{ modellen.rangering }}
+        </div>
+    </div>
+   <canvas id="spillerevnegraf"></canvas><br /><br />
+   <table cellspacing="0" cellpadding="0" border="0">
+       <tr>
+           <th>Spill</th>
+           <th>antall spillinger</th>
+           <th>rangering</th>
+       </tr>
+       <tr ng-repeat="spill in modellen.bestspill">
+           <td>{{ spill.spillnavn }}</td>
+           <td>{{ spill.antall }}</td>
+           <td>{{ spill.snittscore }}</td>
+       </tr>
+   </table>
+   <br /><br />
+    <table cellspacing="0" cellpadding="0" border="0">
+    <tr><th>Spill</th><th class="nomobile">Plassering</th><th class="nomobile">Antall spilere</th><th class="nomobile">Poeng</th><th class="nomobile">Fraksjon</th><th>Rating</th><th></th></tr>
+        <tr ng-repeat="spilling in modellen.spillinger">
+                <td>
+                    {{ spilling.spillnavn }}
+                </td>
+
+               <td class="nomobile">
+                    {{ spilling.posisjon }}
+               </td>
+                <td class="nomobile">
+                    {{ spilling.antallspillere }}
+               </td>           
+                <td class="nomobile">
+                    {{ spilling.poeng }}
+               </td>
+               <td class="nomobile">
+                    {{ spilling.fraksjon }}
+               </td>
+               <td>
+                    {{ spilling.rank }}
+               </td>               
+               <td>
+                        <a href="#sesjoninfo/{{ spilling.id }}">Vis spilling </a>
+                </td>
+        </tr>
+ 
+    </table>
+   <h2>Spillrangeringer</h2>
+   <div ng-repeat="ranku in modellen.rankeringer">
+                <h3>{{ ranku.navn }}</h3>
+                <div ng-repeat="mindel in ranku.spill">
+                    {{ mindel.navn }} <a href="#Spillinfo/{{ mindel.id }}">Vis</a> <br />
+                </div>
+   </div>
+           
+   <h2>Sammenlign med</h2>
+   <a style="padding-left:12px;" ng-repeat="spiller in modellen.medspillere" href="#spillersammenlign/{{ modellen.id }}/{{ spiller.id }}">
+       {{ spiller.navn }}
+   </a> 
+</div>

@@ -1,0 +1,408 @@
+﻿body
+{
+    margin:0;  
+    padding:0;
+    border:0;
+    font-family:"Arial";
+    font-size: 12px;
+    line-height:18px;
+    background-image:url(/Boardgame/Content/images/mainback.png);
+}
+
+html { margin-top: 0px !important; padding-top: 0px !important;    }
+
+a{
+    text-decoration:none;
+    color:#6f6ca6; 
+    cursor: pointer;
+}
+
+h3{   
+    color:#6f6ca6;
+}
+
+ul{ padding:0; margin:0;}
+
+#contentBox td{
+    background-color:#f0dfff;
+    border-bottom:2px solid #e0deff;
+}
+.gamelistcolumn{
+    background-color:#f0dfff;
+    border-bottom:2px solid #e0deff;      
+}
+#playerChooser{
+    display:none;
+    width:100%;
+    z-index:100;
+    position:absolute;
+    background-color:#FFFFFF;
+}
+.seleclistholder{
+    float:left;
+    width:180px;
+}
+.seleclist{
+    font-size:14px;
+    line-height:18px;
+    cursor:pointer;
+    margin:1px 1px 1px 1px;
+    padding-left:4px;
+    padding-right:4px;
+}
+.unselec{
+    background-color:#FFFFFF;
+    color:#6f6ca6;
+}
+.selec{
+    background-color:#6f6ca6;
+    color:#FFFFFF;
+}
+.selectTopRowPlay{
+    float:left;
+    width:100%;
+    margin-bottom:20px;
+}
+
+
+
+#menBount li
+{
+    list-style-type: none;
+
+}
+#loggitConfirm
+{
+    float:left;
+}
+#topMenu
+{
+    width:100%;
+    background-image:url(/Boardgame/Content/images/menuback.png);
+}
+#logoField
+{
+   line-height:34px;
+   font-size:30px;
+   font-family:Verdana, Arial; 
+   color:#6f6ca6;
+   cursor:pointer;
+   font-weight:bold;
+   padding-top:16px;
+}
+#mainContent
+{
+  position:relative; 
+
+}
+#mainContent h1
+{
+   font-size:30px; 
+   font-family:Verdana; 
+   color:#6f6ca6; 
+   font-weight:normal;  
+}
+#mainContent h2
+{
+   font-size:26px; 
+   font-family:Verdana; 
+   color:#6f6ca6; 
+   font-weight:normal; 
+}
+.formLine
+{
+    width:100%;
+    float:left;
+}
+.hovedSubmitKnapp
+{
+    line-height:26px;
+    height:26px;
+    border:none;
+    padding-left:14px;
+    padding-right:14px;
+    background-color: #6f6ca6;
+    color:#FFFFFF;
+    font-size: 16px;
+    font-family:Verdana; 
+    margin-top:18px;
+    font-weight:normal; 
+    float:left; 
+    clear:left; 
+    cursor: pointer;
+}
+#errorMessageRed
+{
+    color:#FF0000;
+    line-height:28px;
+    font-size:18px;    
+}
+#internLenker
+{
+    float:left;
+    width:100%;  
+    padding-top:18px;
+    padding-bottom:18px;
+}
+#internLenker a
+{
+    color:#6f6ca6;
+    font-family:Verdana;
+    text-decoration:none;
+    padding-right:32px;
+}
+#sideMenu a
+{
+    color:#6f6ca6;
+    font-family:Verdana;
+    text-decoration:none;
+    padding-right:18px;
+}
+.gamelistcolumn
+{
+    float:left;
+    width:50%;
+    line-height:20px;
+    font-size:12px;
+    font-family:Arial;    
+}
+.gamelistercolumn
+{
+    float:left;
+    line-height:20px;
+    font-size:12px;
+    font-family:Arial;
+    border-bottom:2px solid #e0deff;
+    background-color:#f0dfff;
+}
+
+.gamelistcolumn a
+{
+    font-size:12px;
+    font-family:Verdana;  
+    color:#6f6ca6;
+    text-decoration:none;  
+}
+.deltakelseZone
+{
+    background-color:#EEEEEE;
+    padding:5px 5px 5px 5px;
+    margin-top:5px;   
+    float:left;
+    width:100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+}
+.dragField 
+{
+    position:absolute;
+    z-index:15;
+    left:0px;
+    top:0px;
+    width: 16px;
+    height:16px;
+    color:#000000;
+    font-weight:bold;
+    line-height:16px;
+    font-size:14px;
+    text-align:center;
+    border:3px solid #000000;
+    background-color:#FFFFFF;
+    cursor:pointer;
+}
+
+
+
+
+#loginZone
+{
+  width:350px;
+  position:relative;
+  margin-top:40px;
+  margin-left:auto;
+  margin-right:auto;       
+}
+
+#playerRatingArea
+{
+    width:100%;
+    position:relative;
+    padding-bottom:35px;
+    padding-top:35px;    
+}
+
+#playerRatingField
+{
+    padding:16px 16px 16px 16px; 
+    font-size:46px;
+    font-family:Verdana;  
+    color:#6f6ca6;
+    font-weight:bold;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    border:2px solid #6f6ca6;
+    width:140px;
+    text-align:center;
+}
+
+ 
+.updaterDIV
+{
+    display:none;
+    border:3px solid #6f6ca6;
+    padding:19px 19px 19px 19px;
+    position:absolute;
+    top:200px;
+    width:300px;
+    background-color:#FFFFFF;
+} 
+#personUpdaterDiv input {
+    margin-bottom:5px;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #6f6ca6;
+    font-size:14px;
+    line-height:22px;
+    height:22px;
+}
+.dragMe {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.deltakerDrag{
+    float:right;
+    width:30px;
+    background-color:#6f6ca6;
+}
+.gamelistcolumnholder {
+    float:left;
+    width:100%;
+}
+.redigervis{
+ /*   display:none; */
+}
+#spillRangeringDiv{
+    display:none;
+}
+#matriselink{
+    display:none;
+    float:left;
+    width:100%;
+    font-weight:bold;
+    font-size:14px;
+}
+.focusglass tr:first-child{
+    font-weight:bold;    
+}
+.focusglass td:first-child{
+    font-weight:bold;    
+}
+#spillerevnegraf{
+    background-color:#FFFFFF;
+    width:100%; 
+    display:none;
+}
+.weekdayblock{
+    float:left;
+}
+.dayweeked{
+    height:19px;
+    line-height:19px;
+    text-align:center;
+    border-top:1px solid #000000;
+    border-left:1px solid #000000;
+    border-right:1px solid #000000;
+}
+.inclasshidden{
+    display:none;
+    height:120px;
+}
+.inclasshow{
+    display:block;    
+    border-bottom:1px solid #000000;
+}
+.dayweeked{
+    cursor:pointer;
+}
+.dayweekede{
+    text-align:center;
+}
+.ukedag{
+    height:140px;
+}
+.ukedag1{
+    background-color:#FF0000;
+}
+.ukedag0{
+    background-color:#880000;
+}
+.ukedag2{
+    background-color:#FFFF00;
+}
+.ukedag4{
+    background-color:#008800;
+}
+.ukedag3{
+    background-color:#00FF00;
+}
+#ukefelt{
+    float:left;
+    width:100%;
+    margin-top:20px;
+}
+.maanedrad{
+    float:left;
+    width:300px;
+    margin-right:10px;
+    margin-bottom:5px
+}
+.ukerad{
+    float:left;
+    width:100%;    
+}
+.dagcelle{
+    float:left;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    margin-right:2px;
+    margin-bottom:2px;
+    text-align:center;
+    cursor: pointer;
+}
+.aldriclass{ background-color:#880000; }
+.sjeldenclass{ background-color:#FF0000; }
+.noytralclass{ background-color:#FFFF00; }
+.ofteclass{ background-color:#00FF00; }
+.fastclass{ background-color:#008800; }
+
+#selectKalenderZone{
+    float:left;
+    width:100%;
+    margin-top:40px;
+}
+.classcalenderbolk{
+    padding:5px 5px 5px 5px;
+    width:80px;
+    float:left;
+}
+.innzonekalender{
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    cursor:pointer;
+    text-align:center;
+}
+.calselunselect{ background-color:#6f6ca6; }
+.calseselect{ background-color:#FFFFFF; }

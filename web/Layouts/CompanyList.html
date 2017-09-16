@@ -1,0 +1,30 @@
+<div id="contentBox">
+<h1>Spillutgivere</h1>
+    <table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>
+            Navn
+        </th>
+        <th>
+            Antall spill
+        </th>
+        <th>
+            Antall spillinger
+        </th> 
+    </tr>
+    <tr ng-repeat="spillet in modellen.spill">
+        <td>
+            {{ spillet.navn }}
+        </td>
+        <td>
+            {{ spillet.antallspill }}
+        </td>
+        <td>
+            {{ spillet.antallsesjoner }}
+        </td>       
+        <td>
+             <a href="#selskapinfo/{{ spillet.id }}">Vis </a>           
+        </td>
+    </tr>
+    </table>
+</div>

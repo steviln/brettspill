@@ -1,0 +1,49 @@
+<div id="contentBox">
+<h1>Rangeringer</h1>
+<div class="frontpageBoxHalf">
+<h3 class="fronth3">Totalt</h3>
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr><td>Spiller</td><td>Rangering</td><td>Spilt</td><td></td></tr>
+     <tr ng-repeat="spillere in modellen.spillere">
+         <td> {{ spillere.fornavn }}</td>
+         <td> {{ spillere.rating }} </td>
+         <td> {{ spillere.antall }} </td>
+         <td> <a href="#spillerinfo/{{ spillere.id }}">Vis</a></td>
+     </tr>
+</table>
+</div>
+
+<div class="frontpageBoxHalf">
+    <h3>Spill</h3>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr ng-repeat="sesjonere in modellen.sesjoner">
+            <td> {{ sesjonere.navn }} </td><td> <a href="#sesjoninfo/{{ sesjonere.id }}">Vis spilling </a></td>
+         </tr>
+    </table>
+</div>
+<div style="width:100%; float:left;"></div>
+<div class="frontpageBoxHalf">
+<h3 class="fronth3">Siste året</h3>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr><td>Spiller</td><td>Rangering</td><td>Spilt</td><td></td></tr>
+        <tr ng-repeat="spillere in modellen.nylige">
+            <td> {{ spillere.fornavn }}</td>
+            <td> {{ spillere.rating }} </td>
+            <td> {{ spillere.antall }} </td>
+            <td> <a href="#spillerinfo/{{ spillere.id }}">Vis</a></td>
+        </tr>
+    </table>
+</div>
+<div class="frontpageBoxHalf">
+<h3 class="fronth3">Mest spilte spill</h3>
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr><td>Spill</td><td>Antall Spilt</td><td></td></tr>
+        <tr ng-repeat="spillet in modellen.spillene">
+            <td> {{ spillet.navn }}</td>
+            <td> {{ spillet.antall}} </td>
+            <td> <a href="#Spillinfo/{{ spillet.id }}">Vis</a></td>
+        </tr>
+    </table>
+    <br /><br /><br /><br />
+</div>
+</div>
